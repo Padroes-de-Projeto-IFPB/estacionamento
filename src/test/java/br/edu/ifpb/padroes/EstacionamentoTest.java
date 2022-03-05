@@ -6,17 +6,16 @@ import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import static br.edu.ifpb.padroes.Estacionamento.*;
+import static br.edu.ifpb.padroes.estrategias.util.Taxas.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EstacionamentoTest {
 
     private Estacionamento estacionamento = new Estacionamento();
-
     @Test
     public void obterTotalAPagarTeste_hora() {
-        LocalDateTime entrada = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
-        LocalDateTime saida = LocalDateTime.of(2021, 1, 1, 11, 0, 0);
+        LocalDateTime entrada = LocalDateTime.of(2021, 1, 1, 11, 0, 0);
+        LocalDateTime saida = LocalDateTime.of(2021, 1, 1, 0, 0, 0);
         Veiculo veiculo = new Veiculo("ABC-123",  "Chevrolet Onix", "Azul");
         estacionamento.setEntrada(entrada);
         estacionamento.setSaida(saida);
